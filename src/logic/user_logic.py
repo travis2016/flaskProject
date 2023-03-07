@@ -12,4 +12,5 @@ class user_class:
         else:
             username = request.args.get("username")
             pwd = request.args.get("password")
+        #请求数据库
         return "{\"status\":1}"

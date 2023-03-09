@@ -11,7 +11,8 @@ class user_action:
         db_connect = Mysql()
         db = db_connect.connect_db()
 
-        sql = "select * from users"
+        sql = "select * from users where username = '%s'" % (username)
+        print(sql)
         cursor = db.cursor()
         cursor.execute(sql)
         # 获取所有的记录

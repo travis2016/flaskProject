@@ -5,6 +5,8 @@ from src.sqlmapple.useractoin import *
 import json
 
 class user_class:
+    user_con = user_action()
+    #用户登录
     def user_login(self):
         username = ""
         pwd = ""
@@ -15,7 +17,10 @@ class user_class:
         else:
             username = request.args.get("username")
             pwd = request.args.get("password")
-        user_con = user_action()
-        user_con.select_user(username,pwd)
+        self.user_con.select_user(username,pwd)
         #请求数据库
         return "{\"status\":1}"
+
+    #查询所有用户
+    def select_alluser(self):
+        return self.user_con.select_all_users()

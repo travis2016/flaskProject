@@ -23,4 +23,5 @@ class user_class:
 
     #查询所有用户
     def select_alluser(self):
-        return self.user_con.select_all_users()
+        select_allusers = self.user_con.select_all_users()
+        return select_allusers

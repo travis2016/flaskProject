@@ -1,8 +1,9 @@
 # coding=utf-8
 #!/usr/bin/python3
+import json
 
 from src.sqlmapple.configmysql import Mysql
-
+import jsonify
 
 class user_action:
     # 调用
@@ -29,8 +30,11 @@ class user_action:
         cursor = db.cursor()
         cursor.execute(sql)
         # 获取所有的记录
-        results_alluser = cursor.fetchall()
-        print(results_alluser)
-        print(type(results_alluser))
+        alluser = cursor.fetchall()
+        results_alluser = []
+        for i in alluser:
+            content = {}
+            content = {"id": i[0], "username": i[2],"desc": i[3],"email":i[5]}
+            results_alluser.append(content)
         self.db_connect.close_db(db)
-        return results_alluser
+        return json.dumps(results_alluser)  #转化为 json格式

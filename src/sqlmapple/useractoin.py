@@ -38,3 +38,11 @@ class user_action:
             results_alluser.append(content)
         self.db_connect.close_db(db)
         return json.dumps(results_alluser)  #转化为 json格式
+
+    #更新用户信息
+    def update_user_action(self):
+        print("1")
+
+    #新增用户
+    def insert_user_action(self):
+        print("insert")

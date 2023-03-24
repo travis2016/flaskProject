@@ -13,3 +13,11 @@ def add_user_fun(app):
     @app.route("/v1/select/all_user", methods=['GET', 'POST'])
     def select_alluser():
         return str(user_control.select_alluser())
+
+    @app.route("/v1/update/update_user", methods=['GET', 'POST'])
+    def update_user():
+        return str(user_control.select_alluser())
+
+    @app.route("/v1/insert/insert_user", methods=['GET', 'POST'])
+    def insert_alluser():
+        return str(user_control.select_alluser())

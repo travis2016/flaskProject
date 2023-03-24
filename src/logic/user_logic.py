@@ -25,3 +25,13 @@ class user_class:
     def select_alluser(self):
         select_allusers = self.user_con.select_all_users()
         return select_allusers
+
+    #更新用户信息
+    def update_user(self):
+        select_allusers = self.user_con.select_all_users()
+        return select_allusers
+
+    #新增用户
+    def insert_user(self):
+        select_allusers = self.user_con.select_all_users()
+        return select_allusers
